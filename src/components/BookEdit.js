@@ -5,11 +5,16 @@ function BookEdit() {
     setTitle(event.targer.value);
 
   }
+  const handleSubmit=(event)=>{
+    event.preventDefault();
+    console.log('New title', title);
+  }
   return <div>
+    <form onSubmit={handleSubmit} className="book-edit">    
     <label>Title</label>
     <input className="input" value={title} onChange={handleChange}/>
-    <button className="button is-primary">Save</button>
-
+    <button className="button is-primary" onClick={handleSubmit}>Save</button>
+    </form>
   </div>;
 }
 
